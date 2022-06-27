@@ -79,7 +79,7 @@ async def auth(ctx, email, ):
 
 @bot.command()
 async def create(ctx):
-    guild = bot.get_guild(990986589301792798)
+    guild = bot.get_guild(990986544611491900)
 
     category = discord.utils.get(guild.categories, name="auth")
 
