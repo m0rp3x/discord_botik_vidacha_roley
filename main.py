@@ -9,11 +9,11 @@ from pymysql.cursors import DictCursor
 from config import settings
 
 dbh = pymysql.connect(
-    host='',
-    port=,
+    host='109.120.190.242',
+    port=3306,
     user='root',
-    password='',
-    db='',
+    password='qBND9KgPur9jAxDwcRrEmReN7y2HBwWFYTYc',
+    db='datebaseass',
     charset='utf8mb4',
     cursorclass=DictCursor,
     autocommit=True
@@ -38,12 +38,10 @@ async def auth(ctx, email, ):
         query = '''INSERT INTO for_discord_bot( Name, Email, Tier, status) VALUES (%s,%s,%s,%s)'''
         values = aboba['Name'], aboba['Email'], aboba['Tier'], '16'
         cur.execute(query, values)
-        await ctx.send(f"Congratulations! You ha    ve your role!")
+        await ctx.send(f"Congratulations! You have your role!")
         if aboba['Tier'] == 'Supporter':
             role_1 = member.guild.get_role(626123834919092244)
             await ctx.message.delete()
-
-
         elif aboba['Tier'] == 'Friend':
             role_3 = member.guild.get_role(626137973918007316)
             await member.add_roles(role_3)
@@ -65,14 +63,11 @@ async def auth(ctx, email, ):
             role_2 = member.guild.get_role(671431724684673025)
             await member.add_roles(role_2)
             await ctx.message.delete()
-
-
-
     else:
         await ctx.send(f"A role has already been issued for this email.")
         await asyncio.sleep(10)
         await ctx.message.delete()
-        await ctx.send.delete()
+
 
 
 @bot.command()
@@ -118,3 +113,4 @@ async def помощь(ctx):
 
 
 bot.run(settings['token'])
+
