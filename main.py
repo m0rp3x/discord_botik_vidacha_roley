@@ -9,11 +9,11 @@ from pymysql.cursors import DictCursor
 from config import settings
 
 dbh = pymysql.connect(
-    host='109.120.190.242',
-    port=3306,
+    host='',
+    port=,
     user='root',
-    password='qBND9KgPur9jAxDwcRrEmReN7y2HBwWFYTYc',
-    db='datebaseass',
+    password='',
+    db='',
     charset='utf8mb4',
     cursorclass=DictCursor,
     autocommit=True
