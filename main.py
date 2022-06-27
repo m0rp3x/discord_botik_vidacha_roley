@@ -63,10 +63,10 @@ async def auth(ctx, email, ):
             role_2 = member.guild.get_role(671431724684673025)
             await member.add_roles(role_2)
             await ctx.message.delete()
-    else:
-        await ctx.send(f"A role has already been issued for this email.")
-        await asyncio.sleep(10)
-        await ctx.message.delete()
+        else:
+            await ctx.send(f"A role has already been issued for this email.")
+            await asyncio.sleep(10)
+            await ctx.message.delete()
 
 
 
@@ -113,4 +113,5 @@ async def помощь(ctx):
 
 
 bot.run(settings['token'])
+
 
